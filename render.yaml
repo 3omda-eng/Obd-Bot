@@ -1,0 +1,9 @@
+services:
+  - type: worker  # For polling (use "web" for webhooks)
+    name: obd-bot-worker
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        fromGroup: true

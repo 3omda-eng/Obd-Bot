@@ -1,0 +1,19 @@
+{
+  "complaints": [
+    {
+      "id": 1,
+      "egyptian": "صوت طقطقه في الملفات",
+      "english": "Clicking sound when turning (CV joint)"
+    },
+    {
+      "id": 2,
+      "egyptian": "هزة في الدركسيون",
+      "english": "Steering wheel vibration"
+    },
+    {
+      "id": 3,
+      "egyptian": "العربية بتسحب ناحية",
+      "english": "Car pulls to one side"
+    }
+  ]
+}

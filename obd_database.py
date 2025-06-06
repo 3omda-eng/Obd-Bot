@@ -11,19 +11,14 @@ class OBDDatabase:
         self._embed_complaints()
     
     def _load_data(self):
-        """Load both OBD codes and complaints"""
-        with open('complaints.json') as f:
+        """Load both OBD codes and complaints from JSON files"""
+        # Load complaint examples
+        with open('complaints.json', encoding='utf-8') as f:
             self.complaints = json.load(f)['complaints']
-        
-        # Your existing OBD codes
-        self.codes = {
-            "P0300": {
-                "description": "Random/Multiple Cylinder Misfire",
-                "severity": "High",
-                "causes": ["Faulty spark plugs", "Vacuum leaks"],
-                "fixes": ["Replace spark plugs", "Check intake system"]
-            }
-        }
+
+        # Load OBD codes from external file
+        with open('codes.json', encoding='utf-8') as f:
+            self.codes = json.load(f)
     
     def _embed_complaints(self):
         """Generate AI embeddings for all complaints"""

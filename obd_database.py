@@ -9,22 +9,20 @@ class OBDDatabase:
         self.model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
         self._load_data()
         self._embed_complaints()
-    
+
     def _load_data(self):
-        """Load both OBD codes and complaints from JSON files"""
-        # Load complaint examples
+        """Load OBD codes and Egyptian complaints from external files"""
         with open('complaints.json', encoding='utf-8') as f:
             self.complaints = json.load(f)['complaints']
 
-        # Load OBD codes from external file
         with open('codes.json', encoding='utf-8') as f:
-            self.codes = json.load(f)
-    
+            self.codes = json.load(f)['codes']
+
     def _embed_complaints(self):
         """Generate AI embeddings for all complaints"""
         texts = [f"{c['egyptian']} {c['english']}" for c in self.complaints]
         self.complaint_embeddings = self.model.encode(texts)
-    
+
     def find_closest_complaint(self, text: str) -> Tuple[Dict, float]:
         """Find most similar complaint using AI"""
         query_embed = self.model.encode(text)
@@ -33,7 +31,7 @@ class OBDDatabase:
         )
         best_idx = np.argmax(similarities)
         return self.complaints[best_idx], float(similarities[best_idx])
-    
+
     def lookup_code(self, code: str) -> Optional[Dict]:
         """Standard OBD code lookup"""
         return self.codes.get(code.upper())

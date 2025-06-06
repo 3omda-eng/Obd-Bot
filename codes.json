@@ -1,0 +1,66 @@
+{
+  "P0300": {
+    "description": "Random/Multiple Cylinder Misfire",
+    "severity": "High",
+    "causes": [
+      "Faulty spark plugs",
+      "Vacuum leaks",
+      "Ignition coil problems"
+    ],
+    "fixes": [
+      "Replace spark plugs",
+      "Inspect and fix vacuum leaks",
+      "Test and replace ignition coils"
+    ]
+  },
+  "P0171": {
+    "description": "System Too Lean (Bank 1)",
+    "severity": "Medium",
+    "causes": [
+      "Vacuum leak",
+      "Dirty MAF sensor",
+      "Fuel delivery issue"
+    ],
+    "fixes": [
+      "Fix vacuum leaks",
+      "Clean or replace MAF sensor",
+      "Check fuel injectors"
+    ]
+  },
+  "P0420": {
+    "description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+    "severity": "Medium",
+    "causes": [
+      "Faulty catalytic converter",
+      "Oxygen sensor failure"
+    ],
+    "fixes": [
+      "Replace catalytic converter",
+      "Check and replace O2 sensors"
+    ]
+  },
+  "P0442": {
+    "description": "Evaporative Emission Control System Leak Detected (Small Leak)",
+    "severity": "Low",
+    "causes": [
+      "Loose gas cap",
+      "Cracked EVAP hose"
+    ],
+    "fixes": [
+      "Tighten or replace gas cap",
+      "Repair or replace hose"
+    ]
+  },
+  "P0128": {
+    "description": "Coolant Thermostat (Coolant Temperature Below Thermostat Regulating Temperature)",
+    "severity": "Low",
+    "causes": [
+      "Stuck open thermostat",
+      "Faulty coolant temperature sensor"
+    ],
+    "fixes": [
+      "Replace thermostat",
+      "Replace temperature sensor"
+    ]
+  }
+}
